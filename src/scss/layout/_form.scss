@@ -100,8 +100,8 @@
             cursor: pointer;
 
             &:hover {
-                border: 1px solid $submitHoverBtmColor;
-                background: $submitHoverBtmColor
+                border: 1px solid $submitHoverBtnColor;
+                background: $submitHoverBtnColor
             }
         }
     }
