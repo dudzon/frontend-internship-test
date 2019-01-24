@@ -16,3 +16,7 @@ cursive;
     align-items: center;
     justify-content: center;
 }
+
+@mixin defaultBackgroundGradient ($deg, $firstColor, $secondColor) {
+    background: linear-gradient($deg, $firstColor 0%, $secondColor 100%);
+}
