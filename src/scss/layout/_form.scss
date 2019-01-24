@@ -1,3 +1,5 @@
+@import 'utils';
+
 .popup {
     width: 20%;
     height: 60%;
@@ -7,5 +9,84 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 5px;
+    border-radius: .3125rem;
+
+    &-form {
+        width: 100%;
+        height: 100%;
+    }
+
+    &-form__container {
+        width: 80%;
+        height: 70%;
+        margin: 0 auto;
+        border: 0;
+        padding: 0;
+    }
+
+    legend {
+        font-family: $buttonFont;
+        padding-top: 3rem;
+        font-size: 2rem;
+        margin: 0 auto 1.25rem;
+    }
+
+    &-form__email,
+    &-form__password {
+        width: 90%;
+        padding: .9375rem;
+        border: 1px solid #ccc;
+        margin-bottom: 1.2rem;
+    }
+
+    &-form__terms {
+        position: relative;
+        margin-top: 1.5rem;
+
+        .form-terms__input {
+            height: 1.25rem;
+            width: 1.25rem;
+            ;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+        }
+
+        .form-terms__label {
+            margin-left: 30px;
+        }
+
+        .form-terms__input+.form-terms__label::before {
+            border: 1px solid #ccc;
+            content: "";
+            height: 1.25rem;
+            width: 1.25rem;
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+
+        .form-terms__input+.form-terms__label::after {
+            content: "";
+            border: 4px solid;
+            border-left: 0;
+            border-top: 0;
+            height: 13px;
+            left: 6px;
+            width: 7px;
+            opacity: 0;
+            position: absolute;
+            top: -1px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            transition: opacity 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .form-terms__input:checked+.form-terms__label::after {
+            opacity: 1;
+        }
+    }
+
 }
