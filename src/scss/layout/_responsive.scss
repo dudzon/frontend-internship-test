@@ -1,0 +1,52 @@
+// Responsive @media styles
+@media screen and (max-width:576px) {
+    .popup {
+        width: 60vw;
+    }
+}
+
+@media screen and (max-height:498.98px) and (orientation: landscape) {
+    .popup {
+        height: 90vh;
+
+        legend {
+            padding-top: 0;
+        }
+    }
+}
+
+@media screen and (max-height:498.98px) and (orientation:portrait) {
+    .popup {
+        height: 80vh;
+    }
+}
+
+@media screen and (min-height: 499px) and (max-height:699px) {
+    .popup {
+        height: 65vh;
+    }
+}
+
+@media screen and (min-height:799px) and(max-height:899px) {
+    .popup {
+        height: 45vh;
+    }
+}
+
+@media screen and (min-height:899.98px) and (max-height:949px) {
+    .popup {
+        height: 43vh;
+    }
+}
+
+@media screen and (min-height:949.98px) and (max-height:1099.98px) {
+    .popup {
+        height: 40vh;
+    }
+}
+
+@media screen and (min-height:1100px) {
+    .popup {
+        height: 30vh;
+    }
+}
