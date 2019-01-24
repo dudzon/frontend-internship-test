@@ -1,11 +1,5 @@
 /* Main styles */
-html,
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import 'utils';
 
 .main {
   background: linear-gradient(-45deg, #fcaf32 0%, #fc888e 100%);
@@ -20,7 +14,7 @@ body {
   background: transparent;
   border: 0;
   cursor: pointer;
-  font-family: 'Lobster', cursive;
+  font-family: $buttonFont;
   font-size: 42px;
   height: 60px;
   outline: none;
