@@ -23,14 +23,15 @@
     <form id="form" action="#" method="POST" class="popup-form">
       <fieldset class="popup-form__container" form="form">
         <legend>Login</legend>
-        <input class="popup-form__email" type="email" name="email" placeholder="Email" />
-        <input class="popup-form__password" type="password" name="password" placeholder="Password" />
+        <input class="popup-form__email" type="email" name="email" placeholder="Email" required />
+        <input class="popup-form__password" type="password" name="password" placeholder="Password" required />
         <div class="popup-form__terms">
           <input type="checkbox" class="form-terms__input" id="formCheckbox" />
           <label for="formCheckbox" class="form-terms__label">I agree to terms &amp; conditions</label>
         </div>
+        <input class="popup-form__submitBtn" type="submit" value="submit" />
       </fieldset>
-      <input class="popup-form__submitBtn" type="submit" value="submit" />
+      <span class="popup-form__close" role="button"><strong>&times;</strong></span>
     </form>
   </div> <!-- end of popup-->
   <script src="js/index.js" charset="utf-8"></script>
