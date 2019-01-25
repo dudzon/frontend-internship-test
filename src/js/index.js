@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 CONSTANTS
   ****************************************/
 
-  const showForm = document.querySelector("#show-popup-form"),
+  const main = document.querySelector(".main"),
+    showForm = document.querySelector("#show-popup-form"),
     popup = document.querySelector(".popup"),
     hideForm = document.querySelector(".popup-form__close"),
     inputEmail = document.querySelector(".popup-form__email"),
@@ -40,6 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
     validatePassword();
     if (warning.children.length < 1) {
       console.log("send form");
+      setTimeout(() => {
+        showSuccesMessage();
+      }, 3000);
     } else {
       return;
     }
@@ -118,6 +122,16 @@ document.addEventListener("DOMContentLoaded", () => {
         elem.remove();
       }
     }
+  };
+
+  //   Hide popup after sumbitting and display success message
+
+  const showSuccesMessage = () => {
+    popup.style.display = "none";
+    const message = document
+      .createRange()
+      .createContextualFragment(`<p class="main__message">Thank you</p>`);
+    main.append(message);
   };
 
   /***************************************
