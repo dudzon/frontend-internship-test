@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     validateTerms();
     if (warning.children.length < 1) {
       setTimeout(() => {
-        showSuccesMessage();
+        showSuccessMessage();
       }, 3000);
     } else {
       return;
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const validateEmail = () => {
     let userEmail = inputEmail.value;
-    const pattern = /^[_A-Za-z0-9-]+(.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(.[A-Za-z0-9-]+)*(.[A-Za-z]{2,4})$/;
+    const pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!pattern.test(userEmail)) {
       showWarning("It's not a valid email!", "email-error", "email");
 
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //   Hide popup after sumbitting and display success message
 
-  const showSuccesMessage = () => {
+  const showSuccessMessage = () => {
     popup.style.display = "none";
     const message = document
       .createRange()
