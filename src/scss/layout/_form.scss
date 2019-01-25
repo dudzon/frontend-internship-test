@@ -1,8 +1,7 @@
 @import 'utils';
 
 .popup {
-    // width: 23vw;
-    height: 50vh;
+    height: 55vh;
     background: #fff;
     margin: 0 auto;
     position: absolute;
@@ -10,6 +9,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: .3125rem;
+    display: none;
 
     &-form {
         width: 100%;
@@ -132,5 +132,12 @@
             height: 2.5rem;
             transition: all .2s ease-in-out;
         }
+    }
+
+    .popup-form__warning {
+        color: $submitHoverBtnColor;
+        position: absolute;
+        bottom: 10px;
+        left: 40px;
     }
 }
