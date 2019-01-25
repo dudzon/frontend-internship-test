@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hideForm = document.querySelector(".popup-form__close"),
     inputEmail = document.querySelector(".popup-form__email"),
     inputPassword = document.querySelector(".popup-form__password"),
-    form = document.querySelector(".popup-form"),
+    terms = document.querySelector(".form-terms__input"),
     warning = document.querySelector(".popup-form__warning"),
     submitBtn = document.querySelector(".popup-form__submitBtn");
 
@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     validateEmail();
     validatePassword();
+    validateTerms();
     if (warning.children.length < 1) {
-      console.log("send form");
       setTimeout(() => {
         showSuccesMessage();
       }, 3000);
@@ -88,6 +88,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return true;
   };
+  //  Validate terms & conditions
+  const validateTerms = () => {
+    if (!terms.checked) {
+      console.log("checked");
+      showWarning("Please accept terms & conditions", "terms-error", "terms");
+    } else {
+      hideWarning(warning.querySelector(".terms-error"));
+    }
+  };
 
   // Show warning, if there is already warning displayed, don't add another one.
 
@@ -114,10 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  //   check if error message exists,to prevent adding duplicate warnings
+  //   Check if error message exists,to prevent adding duplicate warnings
 
   const checkElem = data => {
-    //   MS EDGE doesn't support  for...of loops so I had to revert to old school for loop.
+    //   MS EDGE doesn't support  "for...of" loops so I had to revert to old school "for" loop.
 
     // for (let elem of warning.children) {
     //   if (elem.dataset.error === data) {
