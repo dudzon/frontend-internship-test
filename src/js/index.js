@@ -117,9 +117,16 @@ document.addEventListener("DOMContentLoaded", () => {
   //   check if error message exists,to prevent adding duplicate warnings
 
   const checkElem = data => {
-    for (let elem of warning.children) {
-      if (elem.dataset.error === data) {
-        elem.remove();
+    //   MS EDGE doesn't support  for...of loops so I had to revert to old school for loop.
+
+    // for (let elem of warning.children) {
+    //   if (elem.dataset.error === data) {
+    //     elem.remove();
+    //   }
+    // }
+    for (let i = 0; i < warning.children.length; i++) {
+      if (warning.children[i].dataset.error === data) {
+        warning.children[i].remove();
       }
     }
   };
