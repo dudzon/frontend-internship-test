@@ -2,6 +2,11 @@
 @media screen and (max-width:576px) {
     .popup {
         width: 60vw;
+
+        .password-error,
+        .email-error {
+            font-size: .66rem;
+        }
     }
 }
 
