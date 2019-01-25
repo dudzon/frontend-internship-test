@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     inputEmail = document.querySelector(".popup-form__email"),
     inputPassword = document.querySelector(".popup-form__password"),
     form = document.querySelector(".popup-form"),
-    warning = document.querySelector(".popup-form__warning");
+    warning = document.querySelector(".popup-form__warning"),
+    submitBtn = document.querySelector(".popup-form__submitBtn");
 
   /***************************************
                ACTIONS
@@ -33,7 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //  Form  Validation
 
-  const validateForm = () => {};
+  const validateForm = e => {
+    e.preventDefault();
+    validateEmail();
+    validatePassword();
+    if (warning.children.length < 1) {
+      console.log("send form");
+    } else {
+      return;
+    }
+  };
 
   // Validate Email
 
@@ -109,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   };
+
   /***************************************
                EVENTS
   ****************************************/
@@ -117,4 +128,5 @@ document.addEventListener("DOMContentLoaded", () => {
   hideForm.addEventListener("click", hidePopup);
   inputEmail.addEventListener("blur", validateEmail);
   inputPassword.addEventListener("blur", validatePassword);
+  submitBtn.addEventListener("click", validateForm);
 });
