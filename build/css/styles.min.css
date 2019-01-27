@@ -175,15 +175,11 @@ input {
   .popup {
     height: 67vh; } }
 
-@media screen and (min-height: 799px) and (max-height: 899px) {
+@media screen and (min-height: 799px) and (max-height: 948.98px) {
   .popup {
     height: 45vh; } }
 
-@media screen and (min-height: 899.98px) and (max-height: 949px) {
-  .popup {
-    height: 43vh; } }
-
-@media screen and (min-height: 949.98px) and (max-height: 1099.98px) {
+@media screen and (min-height: 949px) and (max-height: 1099.98px) {
   .popup {
     height: 40vh; } }
 
